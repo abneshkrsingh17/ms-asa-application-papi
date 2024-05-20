@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="fd973fa7-ef32-4bbd-b5fd-dd5148ae38e9" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="ms-asa-application-papiFlow" doc:id="d259cb6c-485c-4beb-8ac5-c2561759cd29" >
+		<http:listener doc:name="Listener" doc:id="c0dc9007-3623-4e80-bec7-7afbdf580139" config-ref="HTTP_Listener_config" path="/test"/>
+		<logger level="INFO" doc:name="Logger" doc:id="12830103-d41f-44d5-8153-866022ceeb0b" message="Welcome to ASA program"/>
+		<set-payload value='#[%dw 2.0&#10;output application/json&#10;---&#10;&#10;{&#10;    "message": "Welcome to ASA program!"&#10;}]' doc:name="Set Payload" doc:id="6cb4485f-f3f0-4e4e-a6a4-dd01ec15ffd5" />
+	</flow>
+</mule>
