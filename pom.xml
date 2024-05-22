@@ -32,7 +32,33 @@
 			</plugin>
 		</plugins>
 	</build>
-
+	<!-- Runtime configuration -->
+        <app.runtime.version>4.4.0</app.runtime.version>
+        <mule.config.environment>changeit</mule.config.environment>
+        <mule.config.encryptionKey>changeit</mule.config.encryptionKey>
+        <anypoint.platform.enableMonitoring>false</anypoint.platform.enableMonitoring>
+        <anypoint.platform.visualizerLayer>changeit</anypoint.platform.visualizerLayer>
+        <anypoint.platform.gatekeeper>flexible</anypoint.platform.gatekeeper>
+        <anypoint.platform.client_id>changeit</anypoint.platform.client_id>
+        <anypoint.platform.client_secret>changeit</anypoint.platform.client_secret>
+        
+        <!-- Deployment configuration -->
+        <cloudhub.appPrefix>changeit</cloudhub.appPrefix>
+        <cloudhub.connAppsClientId>changeit</cloudhub.connAppsClientId>
+        <cloudhub.connAppsClientSecret>changeit</cloudhub.connAppsClientSecret>
+        <cloudhub.businessGroupId>changeit</cloudhub.businessGroupId>
+        <cloudhub.environment>changeit</cloudhub.environment>
+        <cloudhub.applicationName>ms-asa-application-papi</cloudhub.applicationName>
+        <cloudhub.region>changeit</cloudhub.region>
+        <cloudhub.muleVersion>4.4.0</cloudhub.muleVersion>
+        <cloudhub.applyLatestPatch>true</cloudhub.applyLatestPatch>
+        <cloudhub.workerType>changeit</cloudhub.workerType>
+        <cloudhub.workers>1</cloudhub.workers>
+        <cloudhub.objectStoreV2>true</cloudhub.objectStoreV2>
+        <cloudhub.persistentQueues>false</cloudhub.persistentQueues>
+        <cloudhub.skipDeploymentVerification>false</cloudhub.skipDeploymentVerification>
+        <cloudhub.deploymentTimeout>1000000</cloudhub.deploymentTimeout>
+        <cloudhub.disableLogs>true</cloudhub.disableLogs>
 	<dependencies>
 		<dependency>
 			<groupId>org.mule.connectors</groupId>
