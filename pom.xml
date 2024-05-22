@@ -12,27 +12,8 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
-		<app.runtime>4.5.1</app.runtime>
 		<mule.maven.plugin.version>4.0.0</mule.maven.plugin.version>
-	</properties>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-clean-plugin</artifactId>
-				<version>3.2.0</version>
-			</plugin>
-			<plugin>
-				<groupId>org.mule.tools.maven</groupId>
-				<artifactId>mule-maven-plugin</artifactId>
-				<version>${mule.maven.plugin.version}</version>
-				<extensions>true</extensions>
-			</plugin>
-		</plugins>
-	</build>
-	<!-- Runtime configuration -->
+		<!-- Runtime configuration -->
         <app.runtime.version>4.4.0</app.runtime.version>
         <mule.config.environment>changeit</mule.config.environment>
         <mule.config.encryptionKey>changeit</mule.config.encryptionKey>
@@ -59,6 +40,24 @@
         <cloudhub.skipDeploymentVerification>false</cloudhub.skipDeploymentVerification>
         <cloudhub.deploymentTimeout>1000000</cloudhub.deploymentTimeout>
         <cloudhub.disableLogs>true</cloudhub.disableLogs>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>3.2.0</version>
+			</plugin>
+			<plugin>
+				<groupId>org.mule.tools.maven</groupId>
+				<artifactId>mule-maven-plugin</artifactId>
+				<version>${mule.maven.plugin.version}</version>
+				<extensions>true</extensions>
+			</plugin>
+		</plugins>
+	</build>
+	
 	<dependencies>
 		<dependency>
 			<groupId>org.mule.connectors</groupId>
