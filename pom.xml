@@ -13,33 +13,6 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<mule.maven.plugin.version>4.0.0</mule.maven.plugin.version>
-		<!-- Runtime configuration -->
-        <app.runtime.version>4.4.0</app.runtime.version>
-        <mule.config.environment>changeit</mule.config.environment>
-        <mule.config.encryptionKey>changeit</mule.config.encryptionKey>
-        <anypoint.platform.enableMonitoring>false</anypoint.platform.enableMonitoring>
-        <anypoint.platform.visualizerLayer>changeit</anypoint.platform.visualizerLayer>
-        <anypoint.platform.gatekeeper>flexible</anypoint.platform.gatekeeper>
-        <anypoint.platform.client_id>changeit</anypoint.platform.client_id>
-        <anypoint.platform.client_secret>changeit</anypoint.platform.client_secret>
-        
-        <!-- Deployment configuration -->
-        <cloudhub.appPrefix>changeit</cloudhub.appPrefix>
-        <cloudhub.connAppsClientId>changeit</cloudhub.connAppsClientId>
-        <cloudhub.connAppsClientSecret>changeit</cloudhub.connAppsClientSecret>
-        <cloudhub.businessGroupId>changeit</cloudhub.businessGroupId>
-        <cloudhub.environment>changeit</cloudhub.environment>
-        <cloudhub.applicationName>ms-asa-application-papi</cloudhub.applicationName>
-        <cloudhub.region>changeit</cloudhub.region>
-        <cloudhub.muleVersion>4.4.0</cloudhub.muleVersion>
-        <cloudhub.applyLatestPatch>true</cloudhub.applyLatestPatch>
-        <cloudhub.workerType>changeit</cloudhub.workerType>
-        <cloudhub.workers>1</cloudhub.workers>
-        <cloudhub.objectStoreV2>true</cloudhub.objectStoreV2>
-        <cloudhub.persistentQueues>false</cloudhub.persistentQueues>
-        <cloudhub.skipDeploymentVerification>false</cloudhub.skipDeploymentVerification>
-        <cloudhub.deploymentTimeout>1000000</cloudhub.deploymentTimeout>
-        <cloudhub.disableLogs>true</cloudhub.disableLogs>
 	</properties>
 
 	<build>
@@ -47,14 +20,37 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-clean-plugin</artifactId>
-				<version>3.2.0</version>
+				<version>4.0.0</version>
 			</plugin>
 			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
 				<artifactId>mule-maven-plugin</artifactId>
-				<version>${mule.maven.plugin.version}</version>
+				<version>4.0.0</version>
 				<extensions>true</extensions>
 			</plugin>
+
+			<plugin>
+				<groupId>org.mule.tools.maven</groupId>
+				<artifactId>mule-maven-plugin</artifactId>
+				<version>4.0.0</version>
+				<extensions>true</extensions>
+				<configuration>
+					<classifier>mule-application</classifier>
+					<cloudHubDeployment>
+						<muleVersion>4.4.0</muleVersion>
+						<username>abnesh_asa</username>
+						<password>Aayansh@182017</password>
+						<applicationName>ms-asa-application-papi</applicationName>
+						<environment>Sandbox</environment>
+						<workers>1</workers>
+						<workerType>MICRO</workerType>
+						<objectStoreV2>true</objectStoreV2>
+						<region>us-east-2</region>
+						<businessGroupId>78113895-fd3d-4ed8-923a-02d647ae2b5e</businessGroupId>
+					</cloudHubDeployment>
+				</configuration>
+			</plugin>
+			
 		</plugins>
 	</build>
 	
